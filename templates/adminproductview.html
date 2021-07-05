@@ -1,0 +1,34 @@
+{% extends 'admin_layout.html' %}
+{% block body %}
+    <h1>Product view</h1>
+    <a class="btn btn-success" href="/add_products">Add Product</a>
+    <hr>
+    <table class="table table-striped">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Type ID</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Summary</th>
+            <th>Image source</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td >{{item.id}}</td>
+            <td>{{item.type_id}}</td>
+            <td>{{item.product_name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.summary}}</td>
+            <td >{{item.src}}</td>
+            <td><a href="edit_product/{{ item.id }}" class="btn btn-default pull-right"> Edit</a></td>
+            <td> 
+                <form action="{{url_for('delete_product', id=item.id)}}" method = "POST">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                 </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

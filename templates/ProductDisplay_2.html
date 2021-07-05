@@ -1,0 +1,18 @@
+
+{% include 'home.html' %}
+{% block body %}
+    <!--<div>{% include 'home.html' %}</div>-->
+
+    <div class="w3-row w3-grayscale">
+        <div class="w3-col l3 s6">
+            {% for item in items %}
+            <div class="w3-container">
+                <img src="{{item.src}}" style="width:100%">
+                <p style="text-align: center;">{{item.product_name}}<br>KSH {{item.price}}<br>{{item.summary}}</p>
+                
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

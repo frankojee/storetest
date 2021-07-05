@@ -1,0 +1,16 @@
+{% extends 'customerlayout.html' %}
+
+{% block body %}
+    <div class="Jumotron text-centre">
+        <h1>Electronics Shop</h1>
+        {% if session.logged_in == NULL %}
+            <a href="/admin_login" class="btn btn-primary btn-lg">Admin</a>
+            <a href="/customer_login" class="btn btn-primary btn-lg">Customer Login</a>
+            <a href="/customer_register" class="btn btn-primary btn-lg">Cusomer Register</a>
+            <hr>
+        {% endif %}
+    </div>
+    
+    
+
+{% endblock %}

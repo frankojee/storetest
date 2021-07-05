@@ -1,0 +1,26 @@
+{% extends layout.html %}
+{% block body %}
+    <h1>Dashboard</h1>
+    <a class="btn btn-success" href="/add_product">Add Products</a>
+    <hr>
+    <table class="table table-stripped">
+        <tr>
+            <th>ID</th>
+            <th>Type ID</th>
+            <th> Product</th>
+            <th>Unit Price</th>
+            <th>Description</th>
+        </tr>
+        {% for item in products %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.type_id}}</td>
+            <td>{{item.product_name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.summary}}</td>
+            <td><a class="btn btn-default pull-right" href="edit_product/{{item.id}}">Edit</a></td>
+        </tr>
+    </table>
+
+
+{% endblock %}

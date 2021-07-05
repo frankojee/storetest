@@ -1,0 +1,16 @@
+{% extends 'admin_layout.html' %}
+
+{% block body %}
+    <div class="Jumotron text-centre">
+        <h1>Admin</h1>
+        {% if session.logged_in %}
+            <a href="/employee_register" class="btn btn-primary btn-lg">add employee</a>
+            <a href="/admin_add" class="btn btn-primary btn-lg">add admin</a>
+            <a href="/add_products" class="btn btn-primary btn-lg">add product</a>
+            <a href="/supplieradd" class="btn btn-primary btn-lg">add supplier</a>
+            <a href="/addproducttype" class="btn btn-primary btn-lg">add product type</a>
+            <a href="/adminproductview" class="btn btn-primary btn-lg">view products</a>
+            {% endif %}
+    </div>
+
+{% endblock %}
